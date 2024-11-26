@@ -1,14 +1,19 @@
 
+import com.example.health_plus_nurse.apis.AuthApiService
+import com.example.health_plus_nurse.apis.DashBoardApiService
+import com.example.health_plus_nurse.apis.PacienteApiService
 import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
 import javax.net.ssl.*
 
 object RetrofitClient {
 
-    private const val BASE_URL = "https://192.168.1.70:7283/api/"
+    //private const val BASE_URL = "https://192.168.1.70:7283/api/"
     //private const val BASE_URL = "https://192.168.137.247:7283/api/"
-    //private const val BASE_URL = "https://healthplus-d5f0a3dqg6fwfxbq.mexicocentral-01.azurewebsites.net/api/ "
+    private const val BASE_URL = "https://healthplus-d5f0a3dqg6fwfxbq.mexicocentral-01.azurewebsites.net/api/ "
     private val unsafeOkHttpClient: OkHttpClient
         get() {
             return try {
@@ -33,5 +38,35 @@ object RetrofitClient {
             } catch (e: Exception) {
                 throw RuntimeException(e)
             }
+
         }
+
+    val instance: AuthApiService by lazy {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(unsafeOkHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        retrofit.create(AuthApiService::class.java)
+    }
+
+    val instancePacientes: PacienteApiService by lazy{
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(unsafeOkHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        retrofit.create(PacienteApiService::class.java)
+    }
+
+    val instanceDasboard: DashBoardApiService by lazy{
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(unsafeOkHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        retrofit.create(DashBoardApiService::class.java)
+    }
 }
+
+

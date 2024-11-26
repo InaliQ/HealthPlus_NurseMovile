@@ -25,6 +25,6 @@ data class Paciente(
     val contrasenia: String,
     val max: Int,
     val min: Int,
-    val padecimientos: List<Padecimiento>
+    val padecimientos: Padecimiento
 )
 
