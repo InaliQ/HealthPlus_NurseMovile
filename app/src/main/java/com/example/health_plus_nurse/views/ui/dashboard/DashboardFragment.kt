@@ -47,7 +47,7 @@ class DashboardFragment : Fragment() {
 
         viewModel.padecimientosXedad.observe(viewLifecycleOwner) { padecimientosXedad ->
             if (padecimientosXedad.isNotEmpty()) {
-                setupPieChart(padecimientosXedad)
+                //setupPieChart(padecimientosXedad)
             }
         }
 
@@ -83,47 +83,47 @@ class DashboardFragment : Fragment() {
     }
 
 
-    private fun setupPieChart(data: List<PadecimientoXpersonaResponse>) {
-        // Asegúrate de que la lista data tenga elementos y que cada PadecimientoXpersona tenga su lista de padecimientos
-        val entries = data.flatMap { padecimientoXpersona ->
-            padecimientoXpersona.`$id`.map {
-                // Crear una PieEntry por cada elemento en la lista 'value'
-                PieEntry(it..toFloat(), "Edad: ${it.idPadecimiento}")
-            }
-        }
-
-        // Configura el dataset para el gráfico de torta
-        val dataSet = PieDataSet(entries, "Padecimientos por Edad").apply {
-            colors = listOf(
-                Color.rgb(244, 67, 54),  // Rojo
-                Color.rgb(33, 150, 243), // Azul
-                Color.rgb(76, 175, 80),  // Verde
-                Color.rgb(255, 235, 59), // Amarillo
-                Color.rgb(156, 39, 176), // Morado
-                Color.rgb(255, 152, 0)   // Naranja
-            )
-            valueTextColor = Color.WHITE
-            valueTextSize = 12f
-        }
-
-        // Configura los datos del gráfico de torta
-        val pieData = PieData(dataSet).apply {
-            setValueTextSize(14f)
-            setValueTextColor(Color.WHITE)
-        }
-
-        // Configura el gráfico de torta
-        pieChart.data = pieData
-        pieChart.description.isEnabled = false
-        pieChart.isDrawHoleEnabled = true
-        pieChart.holeRadius = 40f
-        pieChart.setEntryLabelColor(Color.BLACK)
-        pieChart.setEntryLabelTextSize(12f)
-        pieChart.animateY(1000, Easing.EaseInOutQuad)
-
-        // Redibuja el gráfico
-        pieChart.invalidate()
-    }
+//    private fun setupPieChart(data: List<PadecimientoXpersonaResponse>) {
+//        // Asegúrate de que la lista data tenga elementos y que cada PadecimientoXpersona tenga su lista de padecimientos
+//        val entries = data.flatMap { padecimientoXpersona ->
+//            padecimientoXpersona.`$id`.map {
+//                // Crear una PieEntry por cada elemento en la lista 'value'
+//                PieEntry(it..toFloat(), "Edad: ${it.idPadecimiento}")
+//            }
+//        }
+//
+//        // Configura el dataset para el gráfico de torta
+//        val dataSet = PieDataSet(entries, "Padecimientos por Edad").apply {
+//            colors = listOf(
+//                Color.rgb(244, 67, 54),  // Rojo
+//                Color.rgb(33, 150, 243), // Azul
+//                Color.rgb(76, 175, 80),  // Verde
+//                Color.rgb(255, 235, 59), // Amarillo
+//                Color.rgb(156, 39, 176), // Morado
+//                Color.rgb(255, 152, 0)   // Naranja
+//            )
+//            valueTextColor = Color.WHITE
+//            valueTextSize = 12f
+//        }
+//
+//        // Configura los datos del gráfico de torta
+//        val pieData = PieData(dataSet).apply {
+//            setValueTextSize(14f)
+//            setValueTextColor(Color.WHITE)
+//        }
+//
+//        // Configura el gráfico de torta
+//        pieChart.data = pieData
+//        pieChart.description.isEnabled = false
+//        pieChart.isDrawHoleEnabled = true
+//        pieChart.holeRadius = 40f
+//        pieChart.setEntryLabelColor(Color.BLACK)
+//        pieChart.setEntryLabelTextSize(12f)
+//        pieChart.animateY(1000, Easing.EaseInOutQuad)
+//
+//        // Redibuja el gráfico
+//        pieChart.invalidate()
+//    }
 
 
 

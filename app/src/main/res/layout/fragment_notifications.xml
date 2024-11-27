@@ -1,199 +1,216 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ui.notifications.NotificationsFragment">
+    android:background="@color/purple_200">
 
+    <!-- Fondo -->
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Fondo"
+        android:scaleType="centerCrop"
         android:src="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:layout_width="323dp"
-        android:layout_height="535dp"
-        android:layout_marginTop="100dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.318">
+        app:layout_constraintVertical_bias="0.0" />
 
-        <ScrollView
+    <!-- Contenedor Principal -->
+    <ScrollView
+        android:id="@+id/mainScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="60dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <!-- Información Personal -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
-                <EditText
-                    android:id="@+id/txtNombre"
-                    android:layout_width="171dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="Nombre" />
-
-                <EditText
-                    android:id="@+id/txt1er"
-                    android:layout_width="171dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="Primer Apelldio" />
-
-                <EditText
-                    android:id="@+id/txt2do"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="segudo apelldio" />
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <EditText
-                    android:id="@+id/txtFechaN"
+                    <TextView
+                        android:id="@+id/textInfoPersonal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Información Personal"
+                        android:textColor="@color/purple_200"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtNombre"
+                        style="@style/EditTextStyle"
+                        android:hint="Nombre" />
+
+                    <EditText
+                        android:id="@+id/txt1er"
+                        style="@style/EditTextStyle"
+                        android:hint="Primer Apellido" />
+
+                    <EditText
+                        android:id="@+id/txt2do"
+                        style="@style/EditTextStyle"
+                        android:hint="Segundo Apellido" />
+
+                    <EditText
+                        android:id="@+id/txtCalle"
+                        style="@style/EditTextStyle"
+                        android:hint="Calle" />
+
+                    <EditText
+                        android:id="@+id/txtNumeroCasa"
+                        style="@style/EditTextStyle"
+                        android:hint="Numero Casa" />
+
+                    <EditText
+                        android:id="@+id/txtColonia"
+                        style="@style/EditTextStyle"
+                        android:hint="Colonia" />
+
+                    <EditText
+                        android:id="@+id/txtCP"
+                        style="@style/EditTextStyle"
+                        android:hint="CP" />
+
+                    <EditText
+                        android:id="@+id/txtFechaN"
+                        style="@style/EditTextStyle"
+                        android:hint="2003-05-12"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/txtTelefono"
+                        style="@style/EditTextStyle"
+                        android:hint="Teléfono"
+                        android:inputType="phone" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Información de Salud -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="date"
-                    android:text="Fecha Nacimiento" />
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <EditText
-                    android:id="@+id/txtTelefono"
+                    <TextView
+                        android:id="@+id/textHealthInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Información de Salud"
+                        android:textColor="@color/purple_200"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtAltura"
+                        style="@style/EditTextStyle"
+                        android:hint="Altura (cm)"
+                        android:inputType="numberDecimal" />
+
+                    <EditText
+                        android:id="@+id/txtPeso"
+                        style="@style/EditTextStyle"
+                        android:hint="Peso (kg)"
+                        android:inputType="numberDecimal" />
+
+                    <EditText
+                        android:id="@+id/txtTipoSangre"
+                        style="@style/EditTextStyle"
+                        android:hint="Tipo de Sangre" />
+
+                    <MultiAutoCompleteTextView
+                        android:id="@+id/txtEnfermedades"
+                        style="@style/EditTextStyle"
+                        android:hint="Enfermedades" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Información de Usuario -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="Telefono" />
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <EditText
-                    android:id="@+id/txtCalle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="Calle" />
+                    <TextView
+                        android:id="@+id/textHealht"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Información de Usuario"
+                        android:textColor="@color/purple_200"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/txtNumeroCasa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="Numero de Casa" />
+                    <EditText
+                        android:id="@+id/txtRegistroUsuario"
+                        style="@style/EditTextStyle"
+                        android:hint="Usuario"
+                        android:inputType="text" />
 
-                <EditText
-                    android:id="@+id/txtColonia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="Colonia" />
+                    <EditText
+                        android:id="@+id/txtRegistroContrasenia"
+                        style="@style/EditTextStyle"
+                        android:hint="Contraseña"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <EditText
-                    android:id="@+id/txtCP"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="CP"
-                    tools:text="CP" />
+            <!-- Botón -->
+            <Button
+                android:id="@+id/btnAgregarPaciente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/purple_200"
+                android:text="Agregar Paciente"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Informacion de Salud" />
-
-                <EditText
-                    android:id="@+id/txtAltura"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="numberDecimal"
-                    android:text="Altura" />
-
-                <EditText
-                    android:id="@+id/txtPeso"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="Peso" />
-
-                <EditText
-                    android:id="@+id/txtTipoSangre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="Tipo de sangre" />
-
-                <MultiAutoCompleteTextView
-                    android:id="@+id/txtEnfermedades"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Enfermedades"
-                    tools:text="enfermedades" />
-
-                <EditText
-                    android:id="@+id/txtMaxima"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/txtMinima"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Datos Usuario" />
-
-                <EditText
-                    android:id="@+id/txtRegistroUsuario"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="Usuario" />
-
-                <EditText
-                    android:id="@+id/txtRegistroContrasenia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="Contrasenia" />
-
-            </LinearLayout>
-        </ScrollView>
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFFFFF"
+                android:text="--"
+                android:textColor="#00FFFFFF" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

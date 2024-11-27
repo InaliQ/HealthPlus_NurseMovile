@@ -60,6 +60,8 @@ class MainActivity : AppCompatActivity() {
                     if (usuarioModel != null) {
                         session.saveSession(usuarioModel.idEnfermero)
                         Toast.makeText(this@MainActivity, "Bienvenido, Estimado Enfermero", Toast.LENGTH_SHORT).show()
+                        Log.d("MainActivity", "ID del Enfermero: ${usuarioModel.idEnfermero}")
+                        session.saveSession(usuarioModel.idEnfermero)
 
                         // Navegar a la pantalla de Inicio
                         val intent = Intent(this@MainActivity, Inicio::class.java)

@@ -6,5 +6,6 @@ data class RecordatorioRequest(
     val fechaInicio: String, // Formato ISO 8601 (ejemplo: 2024-11-19T03:06:08.620Z)
     val fechaFin: String,    // Formato ISO 8601
     val estatus: Boolean,
-    val idEnfermero: Int
+    val idEnfermero: Int,
+    val idPaciente: Int
 )

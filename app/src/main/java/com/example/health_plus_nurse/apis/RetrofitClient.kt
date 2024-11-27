@@ -2,6 +2,7 @@
 import com.example.health_plus_nurse.apis.AuthApiService
 import com.example.health_plus_nurse.apis.DashBoardApiService
 import com.example.health_plus_nurse.apis.PacienteApiService
+import com.example.health_plus_nurse.apis.RecordatorioApiService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -66,6 +67,15 @@ object RetrofitClient {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         retrofit.create(DashBoardApiService::class.java)
+    }
+
+    val instanceRecodatorio: RecordatorioApiService by lazy{
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(unsafeOkHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        retrofit.create(RecordatorioApiService::class.java)
     }
 }
 

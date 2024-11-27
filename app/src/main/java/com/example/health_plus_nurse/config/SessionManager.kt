@@ -11,4 +11,16 @@ class SessionManager(context: Context) {
     fun saveSession(idEnfermero: Int) {
         sharedPreferences.edit().putInt("idEnfermero", idEnfermero).apply()
     }
+
+    fun getEnfermeroId(): Int {
+        return sharedPreferences.getInt("idEnfermero", -1)
+    }
+
+    fun savePaciente(idPaciente: Int) {
+        sharedPreferences.edit().putInt("idPaciente", idPaciente).apply()
+    }
+
+    fun getPacienteId(): Int {
+        return sharedPreferences.getInt("idPaciente", -1)
+    }
 }

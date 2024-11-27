@@ -7,8 +7,10 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.health_plus_nurse.views.ui.home.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -21,4 +23,6 @@
         android:name="com.example.health_plus_nurse.views.ui.notifications.NotificationsFragment"
         android:label="Notifications"
         tools:layout="@layout/fragment_notifications" />
+
+
 </navigation>
