@@ -23,3 +23,21 @@ data class RecordatorioResponse(
     val ultimoRecordatorio: UltimoRecordatorio?
 )
 
+// Modelo para los datos del recordatorio
+data class Recordatorio(
+    val idRecordatorio: Int,
+    val medicamento: String,
+    val cantidadMedicamento: String,
+    val fechaInicio: String,
+    val fechaFin: String,
+    val estatus: Boolean,
+    val idEnfermero: Int,
+    val idPaciente: Int
+)
+
+data class RecordatorioRe(
+    val `$id`: String,
+    val `$values`: List<Recordatorio>
+)
+
+

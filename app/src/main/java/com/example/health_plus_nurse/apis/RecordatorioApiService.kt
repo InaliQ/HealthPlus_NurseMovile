@@ -1,5 +1,6 @@
 package com.example.health_plus_nurse.apis
 
+import com.example.health_plus_nurse.models.RecordatorioRe
 import com.example.health_plus_nurse.models.RecordatorioRequest
 import com.example.health_plus_nurse.models.RecordatorioResponse
 import retrofit2.Call
@@ -15,5 +16,8 @@ interface RecordatorioApiService {
 
         @POST("Recordatorio/agregar")
         fun agregarRecordatorio(@Body recordatorioRequest: RecordatorioRequest): Call<RecordatorioResponse>
+
+        @GET("Recordatorio/TodosRecordatorios/{idPaciente}")
+        fun getTodosRecordatoriosRecordatorio(@Path("idPaciente") idPaciente: Int): Call<RecordatorioRe>
     }
 

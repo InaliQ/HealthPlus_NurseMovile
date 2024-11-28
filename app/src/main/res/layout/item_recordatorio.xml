@@ -1,0 +1,44 @@
+<!-- res/layout/item_recordatorio.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="@color/cardview_shadow_end_color"
+    tools:context=".views.ui.addRecordatorio.RecordatorioAddActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <!-- Descripción del recordatorio -->
+        <TextView
+            android:id="@+id/descripcionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:text="Descripción del recordatorio"
+            android:fontFamily="sans-serif-medium"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Fecha de inicio -->
+        <TextView
+            android:id="@+id/fechaInicioTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:text="Fecha de inicio"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
